@@ -1,9 +1,9 @@
 node_modules
-angular-neurosity/node_modules
+crown/node_modules
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-angular-neurosity/dist
+crown/dist
 /tmp
 /out-tsc
 # Only exists if Bazel was run
