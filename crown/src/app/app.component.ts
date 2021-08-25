@@ -3,7 +3,7 @@ import { mind } from './services/notion';
 import { map, tap } from 'rxjs/operators';
 import { environment } from '../environments/environment';
 import { Observable } from 'rxjs';
-import { RobotService } from './services/robot.service';
+import { Robot, RobotService } from './services/robot.service';
 
 @Component({
   selector: 'app-root',
@@ -65,7 +65,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     console.log ("Hello");
-    this.robot.getRobots();
+    this.robot.getRobots()
+    .subscribe((data) => console.log(data));
     mind
       .login({
         email: environment.email,

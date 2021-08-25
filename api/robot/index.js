@@ -18,6 +18,7 @@ module.exports = async function (context, req) {
       ],
     };
     const robots = data.robots;
+    console.log("API");
     context.res.status(200).json(robots);
   } catch (error) {
     context.res.status(500).send(error);
