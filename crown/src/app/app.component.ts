@@ -3,13 +3,18 @@ import { mind } from './services/notion';
 import { map, tap } from 'rxjs/operators';
 import { environment } from '../environments/environment';
 import { Observable } from 'rxjs';
+import { RobotService } from './services/robot.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
+
 export class AppComponent implements OnInit {
+
+  constructor(private robot: RobotService) { }
+
   accelerometerAcceleration$ = mind
     .login({
       email: environment.email,
@@ -60,6 +65,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     console.log ("Hello");
+    this.robot.getRobots();
     mind
       .login({
         email: environment.email,
