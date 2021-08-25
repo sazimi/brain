@@ -6,8 +6,7 @@
       "direction": "in",
       "name": "req",
       "methods": [
-        "get",
-        "post"
+        "get"
       ], 
       "route": "robot"
     },
@@ -16,6 +15,5 @@
       "direction": "out",
       "name": "res"
     }
-  ],
-  "scriptFile": "../dist/robot/index.js"
+  ]
 }
