@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { mind } from './services/notion';
 import { map, tap } from 'rxjs/operators';
 import { environment } from '../environments/environment';
-import { Observable } from 'rxjs';
-import { Robot, RobotService } from './services/robot.service';
+
+
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ import { Robot, RobotService } from './services/robot.service';
 
 export class AppComponent implements OnInit {
 
-  constructor(private robot: RobotService) { }
+  constructor() { }
 
   accelerometerAcceleration$ = mind
     .login({
@@ -24,27 +24,13 @@ export class AppComponent implements OnInit {
       mind.selectDevice((devices) => {
         return devices.find((device) => device.deviceNickname === "Crown-E0D");
       });
-      // mind.accelerometer().subscribe(accelerometer => {
 
-      //   if (accelerometer.acceleration > 1) console.log(accelerometer);
-      //   return accelerometer.acceleration;
-      // });
-      // mind.kinesis("leftHandPinch").subscribe((intent) => {
-      //   console.log("hello from Pinch", intent);
-      //   if (intent.probability > 0.6) console.log("Pinch", intent.probability);
-      //   return intent.probability;
-      // });
       mind.kinesis("mentalMath").subscribe((intent) => {
         console.log("hello from brain", intent);
         if (intent.probability > 0.95) console.log("Mental Math", intent.probability);
         return intent.probability;
       });
 
-      // mind.kinesis("tongue").subscribe((intent) => {
-      //   console.log("hello from tongue!!", intent);
-      //   if (intent.probability > 0.5) console.log("tongue", intent.probability);
-      //   return intent.label;
-      // });
     })
     .catch((error) => {
       console.log(error);
@@ -64,9 +50,6 @@ export class AppComponent implements OnInit {
   );
 
   ngOnInit() {
-    console.log ("Hello");
-    this.robot.getRobots()
-    .subscribe((data) => console.log(data));
     mind
       .login({
         email: environment.email,

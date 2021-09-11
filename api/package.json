@@ -6,6 +6,9 @@
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "query-string": "^7.0.1",
+    "uuidv4": "^6.2.12",
+    "ws": "^8.2.0"
+  }
 }

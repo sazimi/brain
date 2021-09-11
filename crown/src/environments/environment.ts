@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  device_id: "e0d25ba53a741d344470049f287a5771",
+  device_id: "1e82f1b6aff2104e04eca08f408f1218",
   email: "sherry@sherrylist.com",
   password: "QQP49263-oX"
 
