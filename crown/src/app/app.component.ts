@@ -15,28 +15,6 @@ export class AppComponent implements OnInit {
 
   constructor() { }
 
-  accelerometerAcceleration$ = mind
-    .login({
-      email: environment.email,
-      password: environment.password,
-    })
-    .then(() => {
-      mind.selectDevice((devices) => {
-        return devices.find((device) => device.deviceNickname === "Crown-E0D");
-      });
-
-      mind.kinesis("mentalMath").subscribe((intent) => {
-        console.log("hello from brain", intent);
-        if (intent.probability > 0.95) console.log("Mental Math", intent.probability);
-        return intent.probability;
-      });
-
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-
-
   focusScore$ = mind.focus().pipe(
     map((focus) => {
       return (focus.probability * 100)
