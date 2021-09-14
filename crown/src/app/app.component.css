@@ -7,3 +7,7 @@
   background: rgb(0, 12, 20);
   color: rgb(147, 147, 147);
 }
+
+.hide {
+  visibility: hidden;
+}
