@@ -1,22 +1,22 @@
-<h1 style="text-align: center;"> How focused is Sherry?</h1>
+<h1>How focused is Sherry?</h1>
 
-<circle-progress
-  [percent]="focusScore$ | async"
-  [outerStrokeWidth]="16"
-  [innerStrokeWidth]="8"
-  [outerStrokeColor]="'#ffff00'"
-  [innerStrokeColor]="'#ffff00'"
-  [animation]="true"
-  [animationDuration]="300"
-  [titleColor]="'white'"
-  [titleFontSize]="'40'"
-  [unitsColor]="'white'"
-  [subtitle]="'focus'"
-  [subtitleFontSize]="'20'"
-  [subtitleColor]="'gray'"
-  [responsive]="true"
-  [startFromZero]="false"
-></circle-progress>
+  <circle-progress
+    [percent]="focusScore$ | async"
+    [outerStrokeWidth]="16"
+    [innerStrokeWidth]="8"
+    [outerStrokeColor]="'#ffff00'"
+    [innerStrokeColor]="'#ffff00'"
+    [animation]="true"
+    [animationDuration]="300"
+    [titleColor]="'white'"
+    [titleFontSize]="'40'"
+    [unitsColor]="'white'"
+    [subtitle]="'focus'"
+    [subtitleFontSize]="'20'"
+    [subtitleColor]="'gray'"
+    [responsive]="true"
+    [startFromZero]="false"
+  ></circle-progress>
 
 <!-- 
   <circle-progress 
